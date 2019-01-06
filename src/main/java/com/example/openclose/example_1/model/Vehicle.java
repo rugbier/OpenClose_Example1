@@ -1,13 +1,22 @@
 package com.example.openclose.example_1.model;
 
-public class Vehicle {
-    private VehicleType type;
+import com.example.openclose.example_1.gui.VehiclePrinter;
 
-    public Vehicle(VehicleType type){
-        this.type = type;
+public abstract class Vehicle {
+    private VehiclePrinter printer;
+    private Integer wheelNumber;
+
+    public Vehicle(VehiclePrinter printer, Integer wheelNumber){
+        this.wheelNumber = wheelNumber;
+        this.printer = printer;
     }
 
-    public VehicleType getType(){
-        return type;
+    public void draw(){
+        printer.draw(this);
     }
+
+    public Integer getWheelNumber() {
+        return wheelNumber;
+    }
+
 }
